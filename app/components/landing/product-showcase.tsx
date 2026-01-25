@@ -37,11 +37,11 @@ const features: Feature[] = [
         image: "/screenshots/Screenshot (1).png"
     },
     {
-        id: "terminal",
-        title: "Integrated Terminal",
-        description: "A powerful, Rust-accelerated terminal right where you need it. Execute git commands, run scripts, and manage your environment without ever leaving the application.",
-        icon: Terminal,
-        image: "/screenshots/Screenshot (6).png"
+        id: "workflows",
+        title: "Agentic Workflows",
+        description: "Orchestrate specialized AI agents to handle complex refactors and security hardening. Supervise the swarm as they autonomously improve your code integrity.",
+        icon: Zap,
+        image: "/screenshots/Screenshot (3).png"
     }
 ];
 
