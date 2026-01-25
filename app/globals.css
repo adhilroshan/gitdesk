@@ -10,213 +10,162 @@
   --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   /* ========================================
-   * COLORS - PROFESSIONAL THEME
+   * COLORS - HYPER-MODERN THEME
    * ======================================== */
 
-  /* App backgrounds - Minimalist Dark */
-  --color-app: var(--bg-app);
-  --color-panel: var(--bg-panel);
-  --color-input: var(--bg-input);
-  --color-elevated: var(--bg-elevated);
-  --color-overlay: var(--bg-overlay);
+  /* Core Backgrounds */
+  --color-bg-app: #030304;
+  /* Deepest Black */
+  --color-bg-panel: #09090b;
+  /* Zinc 950 */
+  --color-bg-card: #121215;
+  /* Slightly lighter for cards */
+  --color-bg-elevated: #18181b;
+  /* Zinc 900 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.85);
 
-  /* Borders - Subtle & Sharp */
-  --color-border: var(--border-base);
-  --color-border-subtle: var(--border-subtle);
-  --color-border-emphasis: var(--border-emphasis);
-  --color-border-glow: var(--border-glow);
-  /* Kept subtle for focus states */
+  /* Legacy Mappings for other components */
+  --color-ui-secondary: #27272a;
+  --color-ui-primary-hover: #e4e4e7;
+  --color-ui-error: #ef4444;
+  --color-ui-warning: #eab308;
+  --color-ui-success: #22c55e;
+  --color-border-emphasis: #3f3f46;
 
-  /* Text - High Contrast */
-  --color-text: var(--text-base);
-  --color-text-muted: var(--text-muted);
-  --color-text-subtle: var(--text-subtle);
-  --color-text-disabled: var(--text-disabled);
-  --color-text-glow: var(--text-glow);
+  /* Aurora Gradients (accents) */
+  --color-aurora-1: #6366f1;
+  /* Indigo 500 */
+  --color-aurora-2: #8b5cf6;
+  /* Violet 500 */
+  --color-aurora-3: #d946ef;
+  /* Fuchsia 500 */
+  --color-aurora-4: #06b6d4;
+  /* Cyan 500 */
 
-  /* Functional Git Colors */
-  --color-added: var(--git-added);
-  --color-added-emphasis: var(--git-added-emphasis);
-  --color-added-muted: var(--git-added-muted);
+  /* Borders */
+  --color-border-base: #1f1f22;
+  --color-border-subtle: #18181b;
+  --color-border-hover: #2e2e33;
+  --color-border-active: #3f3f46;
+  --color-border-highlight: rgba(255, 255, 255, 0.1);
 
-  --color-removed: var(--git-removed);
-  --color-removed-emphasis: var(--git-removed-emphasis);
-  --color-removed-muted: var(--git-removed-muted);
+  /* Text */
+  --color-text-base: #f4f4f5;
+  /* Zinc 100 */
+  --color-text-muted: #a1a1aa;
+  /* Zinc 400 */
+  --color-text-subtle: #71717a;
+  /* Zinc 500 */
+  --color-text-dim: #52525b;
+  /* Zinc 600 */
+  --color-text-disabled: #3f3f46;
 
-  --color-modified: var(--git-modified);
-  --color-modified-emphasis: var(--git-modified-emphasis);
-  --color-modified-muted: var(--git-modified-muted);
+  /* Git / Functional Colors */
+  --color-added: #22c55e;
+  --color-removed: #ef4444;
+  --color-modified: #eab308;
+  --color-link: #3b82f6;
 
-  --color-link: var(--git-link);
+  /* UI Actions */
+  --color-primary: #ffffff;
+  --color-primary-inverse: #000000;
+  --color-primary-hover: #e4e4e7;
 
-  /* UI Accents - Steely Blue/Purple */
-  --color-primary: var(--ui-primary);
-  --color-primary-hover: var(--ui-primary-hover);
-  --color-primary-active: var(--ui-primary-active);
-  --color-primary-bg: var(--ui-primary-bg);
+  --color-secondary: #27272a;
+  --color-secondary-hover: #3f3f46;
 
-  --color-secondary: var(--ui-secondary);
-  --color-secondary-hover: var(--ui-secondary-hover);
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  --animate-aurora: aurora 60s linear infinite;
 
-  /* Special States */
-  --color-review: var(--state-review);
-  --color-worktree: var(--state-worktree);
-
-  --color-focus: var(--ui-focus);
-  --color-selection: var(--ui-selection);
-
-  /* Animations - Snappy & Professional */
-  --animate-fade-in: fade-in 0.2s ease-out;
-  --animate-slide-up: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-scale-in: scale-in 0.2s ease-out;
-
-  @keyframes fade-in {
+  @keyframes accordion-down {
     from {
-      opacity: 0;
+      height: 0;
     }
 
     to {
-      opacity: 1;
+      height: var(--radix-accordion-content-height);
     }
   }
 
-  @keyframes slide-up {
+  @keyframes accordion-up {
     from {
-      opacity: 0;
-      transform: translateY(10px);
+      height: var(--radix-accordion-content-height);
     }
 
     to {
-      opacity: 1;
-      transform: translateY(0);
+      height: 0;
     }
   }
 
-  @keyframes scale-in {
-    from {
+  @keyframes spotlight {
+    0% {
       opacity: 0;
-      transform: scale(0.98);
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
     }
 
     to {
-      opacity: 1;
-      transform: scale(1);
+      background-position: 350% 50%, 350% 50%;
     }
   }
 }
 
 /* ========================================
- * PROFESSIONAL THEME DEFINITIONS
+ * UTILITIES & BASE
  * ======================================== */
 
-:root {
-  /* Minimal Dark Palette */
-  --bg-app: #09090b;
-  /* Zinc 950 - Almost Black */
-  --bg-panel: #000000;
-  /* Pure Black for contrast */
-  --bg-input: #18181b;
-  /* Zinc 900 */
-  --bg-elevated: #18181b;
-  --bg-overlay: rgba(0, 0, 0, 0.8);
+@layer base {
+  :root {
+    --bg-app: var(--color-bg-app);
+    --text-base: var(--color-text-base);
+  }
 
-  /* Borders - Very Subtle */
-  --border-base: #27272a;
-  /* Zinc 800 */
-  --border-subtle: #18181b;
-  /* Zinc 900 */
-  --border-emphasis: #3f3f46;
-  /* Zinc 700 */
-  --border-glow: rgba(255, 255, 255, 0.1);
-
-  /* Typography - Inter-like Hierarchy */
-  --text-base: #fafafa;
-  /* Zinc 50 */
-  --text-muted: #a1a1aa;
-  /* Zinc 400 */
-  --text-subtle: #52525b;
-  /* Zinc 600 */
-  --text-disabled: #3f3f46;
-  /* Zinc 700 */
-  --text-glow: #ffffff;
-
-  /* Functional Git Colors */
-  --git-added: #22c55e;
-  /* Green 500 */
-  --git-added-emphasis: #16a34a;
-  --git-added-muted: rgba(34, 197, 94, 0.1);
-
-  --git-removed: #ef4444;
-  /* Red 500 */
-  --git-removed-emphasis: #dc2626;
-  --git-removed-muted: rgba(239, 68, 68, 0.1);
-
-  --git-modified: #eab308;
-  /* Yellow 500 */
-  --git-modified-emphasis: #ca8a04;
-  --git-modified-muted: rgba(234, 179, 8, 0.1);
-
-  --git-link: #3b82f6;
-  /* Blue 500 */
-
-  /* Primary Brand - Sophisticated Blue-Indigo */
-  --ui-primary: #f8fafc;
-  /* White/Slate 50 for primary actions */
-  --ui-primary-hover: #e2e8f0;
-  /* Slate 200 */
-  --ui-primary-active: #cbd5e1;
-  --ui-primary-bg: #fff;
-  /* Black text on white button */
-
-  --ui-secondary: #18181b;
-  --ui-secondary-hover: #27272a;
-
-  /* State Colors */
-  --ui-success: #22c55e;
-  --ui-warning: #eab308;
-  --ui-error: #ef4444;
-
-  --state-review: #8b5cf6;
-  /* Violet */
-  --state-worktree: #f97316;
-  /* Orange */
-
-  --ui-focus: #3b82f6;
-  --ui-selection: rgba(59, 130, 246, 0.2);
+  body {
+    background-color: var(--color-bg-app);
+    color: var(--color-text-base);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-body {
-  background-color: var(--color-app);
-  color: var(--color-text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Removed decorative background gradients for cleanliness */
-}
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
 
-/* Utilities - Clean & Functional */
-.glass-panel {
-  background: rgba(9, 9, 11, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-base);
-}
+  .glass {
+    background: rgba(18, 18, 21, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-.glass-card {
-  background: transparent;
-  border: 1px solid var(--border-base);
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
+  /* Legacy utility for older components */
+  .glass-card {
+    background: rgba(18, 18, 21, 0.4);
+    border: 1px solid var(--color-border-subtle);
+  }
 
-.glass-card:hover {
-  border-color: var(--border-emphasis);
-  background: var(--bg-elevated);
-}
+  .glass-hover {
+    transition: background 0.2s, border-color 0.2s;
+  }
 
-/* Subtle gradient for special text, not overused */
-.text-gradient {
-  background: linear-gradient(to right, #ffffff, #a1a1aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  .glass-hover:hover {
+    background: rgba(39, 39, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
 }
