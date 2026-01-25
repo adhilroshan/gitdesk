@@ -1,47 +1,21 @@
-import { Hero } from "./components/hero";
-import { LSPBridge } from "./components/lsp-bridge";
-import { FeaturesGrid } from "./components/features-grid";
-import { AgentShowcase } from "./components/agent-showcase";
-import { TechStack } from "./components/tech-stack";
-import { DownloadSection } from "./components/download-section";
+import { Hero } from "./components/landing/hero";
+import { ProductShowcase } from "./components/landing/product-showcase";
+import { BentoGrid } from "./components/landing/bento-grid";
+import { AgentsSection } from "./components/landing/agents-section";
+import { TechMarquee } from "./components/landing/tech-marquee";
+import { CtaSection } from "./components/landing/cta-section";
+import { Footer } from "./components/landing/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-bg-app overflow-x-hidden selection:bg-ui-selection text-text-base">
       <Hero />
-      <LSPBridge />
-      <FeaturesGrid />
-      <AgentShowcase />
-      <TechStack />
-      <DownloadSection />
-
-      {/* Footer */}
-      <footer className="py-12 px-4 border-t border-border-subtle">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-ui-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
-              </div>
-              <span className="font-semibold text-text-base">GitDesk</span>
-            </div>
-            <p className="text-sm text-text-muted">
-              © 2025 GitDesk. The AI-Native Code Integrity Platform.
-            </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-text-muted hover:text-ui-primary transition-colors cursor-pointer">
-                Privacy
-              </a>
-              <a href="#" className="text-text-muted hover:text-ui-primary transition-colors cursor-pointer">
-                Terms
-              </a>
-              <a href="#" className="text-text-muted hover:text-ui-primary transition-colors cursor-pointer">
-                Contact
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <TechMarquee />
+      <ProductShowcase />
+      <BentoGrid />
+      <AgentsSection />
+      <CtaSection />
+      <Footer />
     </main>
   );
 }
