@@ -35,9 +35,8 @@ GitDesk aims to revolutionize the development lifecycle by moving security and q
 
 ## 💻 Repository Information
 
-This repository (`gitdesk-io`) contains the source code for the GitDesk landing page and documentation site.
+This repository (`gitdesk`) contains the source code for the GitDesk landing page and product documentation.
 
-- **Main App Repository**: [adhilroshan/gitdesk](https://github.com/adhilroshan/gitdesk)
 - **Download**: [Latest Releases](https://github.com/adhilroshan/gitdesk/releases)
 
 ---
