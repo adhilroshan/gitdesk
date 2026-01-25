@@ -10,30 +10,31 @@
   --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   /* ========================================
-   * COLORS - COSMIC THEME
+   * COLORS - PROFESSIONAL THEME
    * ======================================== */
 
-  /* App backgrounds - Deep Space */
+  /* App backgrounds - Minimalist Dark */
   --color-app: var(--bg-app);
   --color-panel: var(--bg-panel);
   --color-input: var(--bg-input);
   --color-elevated: var(--bg-elevated);
   --color-overlay: var(--bg-overlay);
 
-  /* Borders */
+  /* Borders - Subtle & Sharp */
   --color-border: var(--border-base);
   --color-border-subtle: var(--border-subtle);
   --color-border-emphasis: var(--border-emphasis);
   --color-border-glow: var(--border-glow);
+  /* Kept subtle for focus states */
 
-  /* Text */
+  /* Text - High Contrast */
   --color-text: var(--text-base);
   --color-text-muted: var(--text-muted);
   --color-text-subtle: var(--text-subtle);
   --color-text-disabled: var(--text-disabled);
   --color-text-glow: var(--text-glow);
 
-  /* Git Semantics - Neon Variants */
+  /* Functional Git Colors */
   --color-added: var(--git-added);
   --color-added-emphasis: var(--git-added-emphasis);
   --color-added-muted: var(--git-added-muted);
@@ -48,7 +49,7 @@
 
   --color-link: var(--git-link);
 
-  /* UI Accents */
+  /* UI Accents - Steely Blue/Purple */
   --color-primary: var(--ui-primary);
   --color-primary-hover: var(--ui-primary-hover);
   --color-primary-active: var(--ui-primary-active);
@@ -64,12 +65,10 @@
   --color-focus: var(--ui-focus);
   --color-selection: var(--ui-selection);
 
-  /* Animations */
-  --animate-fade-in: fade-in 0.5s ease-out;
-  --animate-slide-up: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-shimmer: shimmer 2s linear infinite;
+  /* Animations - Snappy & Professional */
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-slide-up: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-scale-in: scale-in 0.2s ease-out;
 
   @keyframes fade-in {
     from {
@@ -84,7 +83,7 @@
   @keyframes slide-up {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(10px);
     }
 
     to {
@@ -93,110 +92,97 @@
     }
   }
 
-  @keyframes pulse-glow {
-
-    0%,
-    100% {
-      opacity: 1;
-      box-shadow: 0 0 20px var(--ui-primary-bg);
-    }
-
-    50% {
-      opacity: 0.7;
-      box-shadow: 0 0 10px var(--ui-primary-bg);
-    }
-  }
-
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes shimmer {
+  @keyframes scale-in {
     from {
-      background-position: 0 0;
+      opacity: 0;
+      transform: scale(0.98);
     }
 
     to {
-      background-position: -200% 0;
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
 
 /* ========================================
- * COSMIC THEME DEFINITIONS
+ * PROFESSIONAL THEME DEFINITIONS
  * ======================================== */
 
 :root {
-  /* Deep Space Backgrounds */
-  --bg-app: #030014;
-  /* Very dark violet/black */
-  --bg-panel: #0f0a29;
-  --bg-input: #080518;
-  --bg-elevated: #1a103c;
-  --bg-overlay: #130b2e;
+  /* Minimal Dark Palette */
+  --bg-app: #09090b;
+  /* Zinc 950 - Almost Black */
+  --bg-panel: #000000;
+  /* Pure Black for contrast */
+  --bg-input: #18181b;
+  /* Zinc 900 */
+  --bg-elevated: #18181b;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
 
-  /* Neon Borders */
-  --border-base: #2a2455;
-  --border-subtle: #1c163b;
-  --border-emphasis: #4c3f91;
-  --border-glow: rgba(139, 92, 246, 0.5);
+  /* Borders - Very Subtle */
+  --border-base: #27272a;
+  /* Zinc 800 */
+  --border-subtle: #18181b;
+  /* Zinc 900 */
+  --border-emphasis: #3f3f46;
+  /* Zinc 700 */
+  --border-glow: rgba(255, 255, 255, 0.1);
 
-  /* Crisp Text */
-  --text-base: #eef2ff;
-  --text-muted: #a5b4fc;
-  --text-subtle: #6366f1;
-  --text-disabled: #4338ca;
-  --text-glow: #e0e7ff;
+  /* Typography - Inter-like Hierarchy */
+  --text-base: #fafafa;
+  /* Zinc 50 */
+  --text-muted: #a1a1aa;
+  /* Zinc 400 */
+  --text-subtle: #52525b;
+  /* Zinc 600 */
+  --text-disabled: #3f3f46;
+  /* Zinc 700 */
+  --text-glow: #ffffff;
 
-  /* Neon Semantics */
-  --git-added: #00ff9d;
-  /* Neon Green */
-  --git-added-emphasis: #00cc7d;
-  --git-added-muted: rgba(0, 255, 157, 0.1);
+  /* Functional Git Colors */
+  --git-added: #22c55e;
+  /* Green 500 */
+  --git-added-emphasis: #16a34a;
+  --git-added-muted: rgba(34, 197, 94, 0.1);
 
-  --git-removed: #ff0055;
-  /* Neon Red/Pink */
-  --git-removed-emphasis: #cc0044;
-  --git-removed-muted: rgba(255, 0, 85, 0.1);
+  --git-removed: #ef4444;
+  /* Red 500 */
+  --git-removed-emphasis: #dc2626;
+  --git-removed-muted: rgba(239, 68, 68, 0.1);
 
-  --git-modified: #ffb700;
-  /* Neon Amber */
-  --git-modified-emphasis: #cc9200;
-  --git-modified-muted: rgba(255, 183, 0, 0.1);
+  --git-modified: #eab308;
+  /* Yellow 500 */
+  --git-modified-emphasis: #ca8a04;
+  --git-modified-muted: rgba(234, 179, 8, 0.1);
 
-  --git-link: #00d9ff;
-  /* Cyan */
+  --git-link: #3b82f6;
+  /* Blue 500 */
 
-  /* Primary Accents - Electric Violet & Cyan */
-  --ui-primary: #8b5cf6;
-  /* Violet */
-  --ui-primary-hover: #a78bfa;
-  --ui-primary-active: #7c3aed;
-  --ui-primary-bg: rgba(139, 92, 246, 0.2);
+  /* Primary Brand - Sophisticated Blue-Indigo */
+  --ui-primary: #f8fafc;
+  /* White/Slate 50 for primary actions */
+  --ui-primary-hover: #e2e8f0;
+  /* Slate 200 */
+  --ui-primary-active: #cbd5e1;
+  --ui-primary-bg: #fff;
+  /* Black text on white button */
 
-  --ui-secondary: #0f0a29;
-  --ui-secondary-hover: #1a103c;
+  --ui-secondary: #18181b;
+  --ui-secondary-hover: #27272a;
 
   /* State Colors */
-  --ui-success: #00ff9d;
-  --ui-warning: #ffb700;
-  --ui-error: #ff0055;
+  --ui-success: #22c55e;
+  --ui-warning: #eab308;
+  --ui-error: #ef4444;
 
-  --state-review: #d946ef;
-  /* Fuchsia */
+  --state-review: #8b5cf6;
+  /* Violet */
   --state-worktree: #f97316;
   /* Orange */
 
-  --ui-focus: #00d9ff;
-  --ui-selection: rgba(139, 92, 246, 0.3);
+  --ui-focus: #3b82f6;
+  --ui-selection: rgba(59, 130, 246, 0.2);
 }
 
 body {
@@ -205,56 +191,32 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:
-    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(0, 217, 255, 0.08), transparent 25%);
-  background-attachment: fixed;
+  /* Removed decorative background gradients for cleanliness */
 }
 
-/* Glass Utilities - Premium Feel */
+/* Utilities - Clean & Functional */
 .glass-panel {
-  background: rgba(15, 10, 41, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-base);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  background: transparent;
+  border: 1px solid var(--border-base);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--border-glow);
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
-  transform: translateY(-2px);
+  border-color: var(--border-emphasis);
+  background: var(--bg-elevated);
 }
 
+/* Subtle gradient for special text, not overused */
 .text-gradient {
-  background: linear-gradient(135deg, #00d9ff 0%, #8b5cf6 50%, #d946ef 100%);
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% 200%;
-  animation: shimmer 4s linear infinite;
-}
-
-.neon-border {
-  position: relative;
-}
-
-.neon-border::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(45deg, #8b5cf6, #00d9ff);
-  z-index: -1;
-  filter: blur(8px);
-  opacity: 0.5;
-  border-radius: inherit;
 }
