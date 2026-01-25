@@ -4,7 +4,7 @@
 
 GitDesk is the AI-native security partner for modern developers. It replaces fragmented toolchains with a single, high-performance native platform designed to catch vulnerabilities, secrets, and bugs *before* you push.
 
-![GitDesk Interface](/screenshots/Screenshot%20(1).png)
+![GitDesk Interface](/public/screenshots/Screenshot%20(1).png)
 
 ## 🛡️ Core Features
 
