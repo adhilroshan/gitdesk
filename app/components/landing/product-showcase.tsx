@@ -52,11 +52,11 @@ export function ProductShowcase() {
         <section className="py-32 relative bg-bg-app border-b border-border-base">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-text-base tracking-tight">
-                        Built for <span className="text-aurora-2">Velocity.</span>
+                    <h2 className="text-3xl md:text-5xl font-black font-mono mb-6 text-text-base tracking-tight">
+                        BUILT FOR <span className="text-primary">VELOCITY.</span>
                     </h2>
-                    <p className="text-xl text-text-muted">
-                        Every tool you need to ship secure code, consolidated into one beautiful native interface.
+                    <p className="text-xl text-text-muted font-sans max-w-2xl mx-auto">
+                        Every tool you need to ship secure code, consolidated into one powerful native interface.
                     </p>
                 </div>
 
@@ -70,27 +70,27 @@ export function ProductShowcase() {
                                     key={feature.id}
                                     onClick={() => setActiveFeature(index)}
                                     className={cn(
-                                        "group flex items-start gap-5 p-6 rounded-xl transition-all duration-300 text-left border border-transparent",
+                                        "group flex items-start gap-5 p-6 rounded-lg transition-all duration-300 text-left border-l-4",
                                         isActive
-                                            ? "bg-bg-elevated border-border-highlight shadow-lg"
-                                            : "hover:bg-bg-panel hover:border-border-subtle"
+                                            ? "bg-bg-elevated border-l-primary shadow-lg"
+                                            : "border-l-transparent hover:bg-bg-panel"
                                     )}
                                 >
                                     <div className={cn(
-                                        "shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300",
-                                        isActive ? "bg-aurora-1/10 text-aurora-1" : "bg-bg-card text-text-muted group-hover:text-text-base border border-border-subtle"
+                                        "shrink-0 w-10 h-10 rounded-sm flex items-center justify-center transition-colors duration-300",
+                                        isActive ? "bg-primary text-white" : "bg-bg-card text-text-muted group-hover:text-text-base border border-border-subtle"
                                     )}>
                                         <feature.icon className="w-5 h-5" />
                                     </div>
                                     <div>
                                         <h3 className={cn(
-                                            "text-lg font-semibold mb-2 transition-colors",
+                                            "text-lg font-bold font-mono mb-2 transition-colors",
                                             isActive ? "text-text-base" : "text-text-subtle group-hover:text-text-base"
                                         )}>
                                             {feature.title}
                                         </h3>
                                         <p className={cn(
-                                            "text-sm leading-relaxed transition-colors",
+                                            "text-sm leading-relaxed transition-colors font-sans",
                                             isActive ? "text-text-muted" : "text-text-dim"
                                         )}>
                                             {feature.description}
@@ -103,9 +103,9 @@ export function ProductShowcase() {
 
                     {/* Visual / Screenshot */}
                     <div className="lg:col-span-7 pb-8 lg:pb-0">
-                        <div className="relative aspect-[16/10] w-full rounded-2xl border border-border-highlight bg-bg-card shadow-2xl overflow-hidden glass">
+                        <div className="relative aspect-[16/10] w-full rounded-xl border border-border-highlight bg-bg-card shadow-2xl overflow-hidden glass">
                             {/* Inner glow */}
-                            <div className="absolute inset-0 bg-aurora-1/5 pointer-events-none" />
+                            <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
 
                             <AnimatePresence mode="wait">
                                 <motion.div
@@ -116,7 +116,7 @@ export function ProductShowcase() {
                                     transition={{ duration: 0.3 }}
                                     className="absolute inset-0 p-1"
                                 >
-                                    <div className="relative w-full h-full rounded-xl overflow-hidden bg-bg-app">
+                                    <div className="relative w-full h-full rounded-lg overflow-hidden bg-bg-app">
                                         <Image
                                             src={features[activeFeature].image}
                                             alt={features[activeFeature].title}

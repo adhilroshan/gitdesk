@@ -1,41 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, Star, Shield, Terminal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const AuroraBackground = () => {
-    return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full bg-aurora-1 opacity-[0.08] blur-[100px] animate-pulse" />
-            <div className="absolute top-[10%] right-[-10%] w-[40%] h-[50%] rounded-full bg-aurora-4 opacity-[0.08] blur-[100px] animate-pulse delay-1000" />
-            <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-aurora-2 opacity-[0.05] blur-[120px]" />
-        </div>
-    );
-};
-
 export function Hero() {
     return (
-        <section className="relative min-h-[95vh] flex flex-col justify-center items-center pt-24 pb-16 overflow-hidden bg-bg-app border-b border-border-base">
-            <AuroraBackground />
+        <section className="relative flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden bg-bg-app border-b border-border-base">
 
-            {/* Grid Pattern */}
-            <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+            {/* Geometric Background Pattern */}
+            <div className="absolute inset-0 z-0 opacity-20">
+                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-[size:64px_64px]" />
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full mix-blend-screen" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[100px] rounded-full mix-blend-screen" />
+            </div>
 
-            <div className="container relative z-10 px-4 text-center">
+            <div className="container relative z-10 px-4 text-center max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    transition={{ duration: 0.5 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 rounded-full bg-border-subtle/50 border border-border-highlight backdrop-blur-md">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aurora-4 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-aurora-4"></span>
-                        </span>
-                        <span className="text-xs font-medium text-text-muted tracking-wide">
-                            PUBLIC BETA NOW LIVE
+                    <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-lg bg-border-subtle/50 border border-border-highlight backdrop-blur-md">
+                        <Terminal className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-mono font-medium text-text-muted tracking-wide">
+                            PUBLIC BETA v0.1.0
                         </span>
                     </div>
                 </motion.div>
@@ -43,61 +33,89 @@ export function Hero() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                    className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-text-base leading-[1.1] relative"
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-5xl md:text-7xl lg:text-8xl font-black font-mono tracking-tighter mb-8 text-text-base leading-none"
                 >
-                    <span className="block text-transparent bg-clip-text bg-linear-to-b from-white to-white/70">
-                        Code Integrity,
-                    </span>
-                    <span className="block text-transparent bg-clip-text bg-linear-to-r from-aurora-1 via-aurora-2 to-aurora-1 bg-[length:200%_auto] animate-aurora">
-                        Reimagined.
+                    CODE INTEGRITY
+                    <span className="block text-primary mt-2">
+                        REIMAGINED.
                     </span>
                 </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-xl md:text-2xl text-text-muted max-w-2xl mx-auto mb-12 font-sans leading-relaxed"
                 >
-                    Meet GitDesk—your native AI security partner.
-                    <br className="hidden md:block" />
-                    Proactively catch vulnerabilities, secrets, and bugs <span className="text-text-base font-medium">before</span> you push.
+                    Your AI-native security partner. Catch vulnerabilities, secrets, and bugs <span className="text-text-base font-semibold">before you push</span>.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
                 >
                     <Link
                         href="https://github.com/adhilroshan/gitdesk/releases/latest"
-                        className="group relative h-12 px-8 rounded-full bg-white text-black font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                        className="group relative h-14 px-8 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold font-mono text-base flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                     >
-                        <span>Download Beta</span>
-                        <div className="w-4 h-4 relative">
-                            <div className="absolute inset-0 bg-black rotate-45 transform group-hover:rotate-90 transition-transform duration-300" />
+                        <span>DOWNLOAD BETA</span>
+                        <div className="bg-white/20 p-1 rounded-sm">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:rotate-90 transition-transform">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
                         </div>
                     </Link>
                     <Link
                         href="https://github.com/adhilroshan/gitdesk-io"
                         target="_blank"
-                        className="h-12 px-8 rounded-full bg-border-subtle/50 text-text-base font-medium text-sm flex items-center justify-center gap-2 border border-border-base hover:bg-border-hover transition-all backdrop-blur-sm"
+                        className="h-14 px-8 rounded-lg bg-secondary hover:bg-secondary-hover text-text-base font-semibold font-mono text-base flex items-center justify-center gap-3 border border-border-base transition-all"
                     >
-                        <Github className="w-4 h-4" />
-                        <span>Star on GitHub</span>
+                        <Github className="w-5 h-5" />
+                        <span>STAR ON GITHUB</span>
                     </Link>
+                </motion.div>
+
+                {/* Trust/Rating Block */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex justify-center gap-8 mb-16 text-text-muted"
+                >
+                    <div className="flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-green-500" />
+                        <span className="font-mono text-sm">Enterprise Security</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <div className="flex">
+                            {[1, 2, 3, 4, 5].map((i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                            ))}
+                        </div>
+                        <span className="font-mono text-sm">Developer Loved</span>
+                    </div>
                 </motion.div>
 
                 {/* Hero Visual */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95, y: 40 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "backOut" }}
-                    className="relative mx-auto max-w-5xl rounded-xl border border-border-highlight bg-bg-card/50 shadow-2xl backdrop-blur-sm overflow-hidden"
+                    transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
+                    className="relative mx-auto max-w-6xl rounded-xl border border-border-active/30 bg-bg-card shadow-2xl overflow-hidden group"
                 >
-                    <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                    <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-primary via-indigo-500 to-primary" />
+                    <div className="bg-bg-panel p-2 flex items-center gap-2 border-b border-border-base">
+                        <div className="flex gap-2 px-2">
+                            <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
+                            <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
+                            <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+                        </div>
+                        <div className="text-xs font-mono text-text-dim px-2">gitdesk-preview — 85% clean</div>
+                    </div>
                     <div className="aspect-[16/10] relative bg-bg-app">
                         <Image
                             src="/screenshots/Screenshot (1).png"
@@ -107,7 +125,7 @@ export function Hero() {
                             priority
                         />
                         {/* Overlay Glare */}
-                        <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-primary/5 pointer-events-none group-hover:opacity-75 transition-opacity duration-700" />
                     </div>
                 </motion.div>
             </div>
