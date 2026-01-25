@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/app/lib/utils";
-import { GitBranch, Shield, Zap, Terminal } from "lucide-react";
+import { GitBranch, Shield, Zap } from "lucide-react";
 
 interface Feature {
     id: string;
