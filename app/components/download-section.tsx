@@ -31,37 +31,49 @@ export function DownloadSection() {
   return (
     <section className="py-32 px-4 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-ui-primary/10 via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Section Header */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-text-base">
           Ready to ship <span className="text-gradient">better code</span>?
         </h2>
-        <p className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
-          Join thousands of developers who have already upgraded their Git workflow. Free during public beta.
+        <p className="text-xl text-text-muted mb-12 max-w-2xl mx-auto">
+          Join developers who have already upgraded their Git workflow. Currently in <strong>Pre-Release</strong>.
         </p>
 
         {/* Main CTA Button */}
-        <button className="group relative px-10 py-5 bg-accent hover:bg-accent-hover text-white rounded-full font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1 cursor-pointer mb-8">
+        <a
+          href="https://github.com/adhilroshan/gitdesk-io/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex items-center justify-center px-10 py-5 bg-ui-primary hover:bg-ui-primary-hover text-white rounded-full font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:shadow-ui-primary/30 hover:-translate-y-1 cursor-pointer mb-8"
+        >
           <span className="flex items-center justify-center gap-3">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download GitDesk Beta
+            Download for Windows
           </span>
-        </button>
+        </a>
 
         {/* Platform Icons */}
         <div className="flex justify-center gap-8 mb-12">
           {platforms.map((platform) => (
             <div
               key={platform.name}
-              className="flex items-center gap-2 text-text-secondary hover:text-foreground transition-colors cursor-pointer"
+              className={`flex items-center gap-2 transition-colors ${platform.name === "Windows"
+                ? "text-ui-primary font-medium"
+                : "text-text-disabled cursor-not-allowed opacity-60"
+                }`}
+              title={platform.name === "Windows" ? "Available now" : "Coming soon"}
             >
               <div className="w-8 h-8 flex items-center justify-center">{platform.icon}</div>
-              <span className="text-sm font-medium">{platform.name}</span>
+              <span className="text-sm font-medium">
+                {platform.name}
+                {platform.name !== "Windows" && <span className="ml-1 text-[10px] uppercase tracking-wider opacity-70">(Soon)</span>}
+              </span>
             </div>
           ))}
         </div>

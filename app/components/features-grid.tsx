@@ -9,7 +9,7 @@ const features = [
     ),
     title: "Agentic AI Code Review",
     description: "Three specialized AI agents run in parallel—Security scans for vulnerabilities and secrets (OWASP Top 10), Performance spots O(n²) patterns, Maintainability enforces clean code and detects zombie imports.",
-    color: "bg-accent/20 text-accent",
+    color: "bg-ui-primary/20 text-ui-primary",
     linkText: "See how it works",
   },
   {
@@ -20,7 +20,7 @@ const features = [
     ),
     title: "LSP Bridge Integration",
     description: "Language servers analyze staged changes in real-time. What you commit is what gets reviewed. Shadow workspace ensures accurate diagnostics merged with AI analysis.",
-    color: "bg-ai-meta/20 text-ai-meta",
+    color: "bg-state-review/20 text-state-review",
     linkText: "Learn about LSP Bridge",
   },
   {
@@ -31,7 +31,7 @@ const features = [
     ),
     title: "Visual Worktree Manager",
     description: "One-click PR review workflow: Fetch → Create worktree → Sync deps → Open editor. Auto-cleanup, node_modules symlinking, isolated environments. Stop git stash'ing.",
-    color: "bg-git-added/20 text-git-added",
+    color: "bg-state-worktree/20 text-state-worktree",
     linkText: "Explore worktrees",
   },
   {
@@ -42,7 +42,7 @@ const features = [
     ),
     title: "AI-Powered Commits",
     description: "Auto-generate commit messages from your changes. Configurable commit blocking enforces quality before pushing. Review diffs side-by-side with AI suggestions applied instantly.",
-    color: "bg-git-added/20 text-git-added",
+    color: "bg-ui-success/20 text-ui-success",
     linkText: "Learn about commits",
   },
   {
@@ -53,7 +53,7 @@ const features = [
     ),
     title: "Redacted Mode",
     description: "Privacy-first AI review. Code logic is redacted while signatures are preserved for analysis. Your secrets and proprietary logic never leave your machine.",
-    color: "bg-ai-meta/20 text-ai-meta",
+    color: "bg-state-review/20 text-state-review",
     linkText: "Explore privacy",
   },
   {
@@ -64,7 +64,7 @@ const features = [
     ),
     title: "Multi-Language Ready",
     description: "Native support for TypeScript, Rust, Python, and Go from day one. LSP integration for each language provides accurate diagnostics and intelligent suggestions.",
-    color: "bg-accent/20 text-accent",
+    color: "bg-ui-primary/20 text-ui-primary",
     linkText: "View language support",
   },
 ];
@@ -75,10 +75,10 @@ export function FeaturesGrid() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-base">
             Built for the <span className="text-gradient">modern workflow</span>
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-muted text-lg max-w-2xl mx-auto">
             Everything you need to ship quality code faster, without sacrificing safety or performance.
           </p>
         </div>
@@ -90,13 +90,13 @@ export function FeaturesGrid() {
               <div className={`w-12 h-12 rounded-xl ${feature.color} flex items-center justify-center mb-4`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">{feature.title}</h3>
-              <p className="text-text-secondary leading-relaxed mb-4 flex-1">
+              <h3 className="text-xl font-semibold mb-3 text-text-base">{feature.title}</h3>
+              <p className="text-text-muted leading-relaxed mb-4 flex-1">
                 {feature.description}
               </p>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors font-medium text-sm group cursor-pointer"
+                className="inline-flex items-center gap-2 text-ui-primary hover:text-ui-primary-hover transition-colors font-medium text-sm group cursor-pointer"
               >
                 {feature.linkText}
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

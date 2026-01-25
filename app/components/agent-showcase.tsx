@@ -114,15 +114,15 @@ export function AgentShowcase() {
   return (
     <section className="py-32 px-4 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-ui-primary/5 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-base">
             Watch AI agents <span className="text-gradient">fix your code</span>
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-muted text-lg max-w-2xl mx-auto">
             See how four specialized agents work together to transform vulnerable code into production-ready implementations.
           </p>
         </div>
@@ -132,7 +132,7 @@ export function AgentShowcase() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-3 h-3 rounded-full bg-git-removed" />
-              <span className="text-sm font-medium text-text-secondary">Before</span>
+              <span className="text-sm font-medium text-text-muted">Before</span>
             </div>
             <CodeBlock code={beforeCode} fileName="auth.ts" highlights={[
               { line: 5, type: "removed" },
@@ -146,7 +146,7 @@ export function AgentShowcase() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-3 h-3 rounded-full bg-git-added" />
-              <span className="text-sm font-medium text-text-secondary">After</span>
+              <span className="text-sm font-medium text-text-muted">After</span>
             </div>
             <CodeBlock code={afterCode} fileName="auth.ts" highlights={[
               { line: 2, type: "added" },
@@ -161,14 +161,14 @@ export function AgentShowcase() {
         {/* Agent Fixes Breakdown */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {fixes.map((fix, index) => (
-            <GlassCard key={index} className="p-5">
+            <GlassCard key={index} className="p-5 border border-border-subtle bg-panel/30">
               <div className={`w-10 h-10 rounded-lg ${fix.bgColor} ${fix.color} flex items-center justify-center mb-4`}>
                 {fix.icon}
               </div>
-              <h4 className="font-semibold mb-3 text-foreground">{fix.agent}</h4>
+              <h4 className="font-semibold mb-3 text-text-base">{fix.agent}</h4>
               <ul className="space-y-2">
                 {fix.fixes.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+                  <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
                     <svg className="w-4 h-4 text-git-added flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>

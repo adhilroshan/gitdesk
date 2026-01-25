@@ -1,0 +1,752 @@
+@import "tailwindcss";
+
+/*
+ * GitDesk AI - Design Tokens
+ * Theme: "Git-Native Professional"
+ * Reference: VS Code, Zed Editor, GitHub Dark Mode
+ */
+
+@theme {
+  /* ========================================
+   * FONTS
+   * ======================================== */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* ========================================
+   * WORKSPACE COLORS
+   * ======================================== */
+  
+  /* App backgrounds */
+  --color-app: var(--bg-app);
+  --color-panel: var(--bg-panel);
+  --color-input: var(--bg-input);
+  --color-elevated: var(--bg-elevated);
+  --color-overlay: var(--bg-overlay);
+  
+  /* Borders */
+  --color-border: var(--border-base);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-emphasis: var(--border-emphasis);
+  
+  /* Text */
+  --color-text: var(--text-base);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-text-disabled: var(--text-disabled);
+  
+  /* ========================================
+   * GIT SEMANTIC COLORS
+   * ======================================== */
+  
+  /* Added - Green */
+  --color-added: var(--git-added);
+  --color-added-emphasis: var(--git-added-emphasis);
+  --color-added-muted: var(--git-added-muted);
+  --color-added-subtle: var(--git-added-subtle);
+  
+  /* Removed - Red */
+  --color-removed: var(--git-removed);
+  --color-removed-emphasis: var(--git-removed-emphasis);
+  --color-removed-muted: var(--git-removed-muted);
+  --color-removed-subtle: var(--git-removed-subtle);
+  
+  /* Modified - Yellow/Orange */
+  --color-modified: var(--git-modified);
+  --color-modified-emphasis: var(--git-modified-emphasis);
+  --color-modified-muted: var(--git-modified-muted);
+  --color-modified-subtle: var(--git-modified-subtle);
+  
+  /* Link/Primary - Blue */
+  --color-link: var(--git-link);
+  --color-link-emphasis: var(--git-link-emphasis);
+  --color-link-muted: var(--git-link-muted);
+  --color-link-subtle: var(--git-link-subtle);
+  
+  /* ========================================
+   * UI ACCENT COLORS
+   * ======================================== */
+  
+  /* Primary (Blue) */
+  --color-primary: var(--ui-primary);
+  --color-primary-hover: var(--ui-primary-hover);
+  --color-primary-active: var(--ui-primary-active);
+  --color-primary-bg: var(--ui-primary-bg);
+  
+  /* Secondary */
+  --color-secondary: var(--ui-secondary);
+  --color-secondary-hover: var(--ui-secondary-hover);
+  --color-secondary-active: var(--ui-secondary-active);
+  
+  /* Success (for commits, actions) */
+  --color-success: var(--ui-success);
+  --color-success-hover: var(--ui-success-hover);
+  --color-success-bg: var(--ui-success-bg);
+  
+  /* Warning */
+  --color-warning: var(--ui-warning);
+  --color-warning-hover: var(--ui-warning-hover);
+  --color-warning-bg: var(--ui-warning-bg);
+  
+  /* Error/Danger */
+  --color-error: var(--ui-error);
+  --color-error-hover: var(--ui-error-hover);
+  --color-error-bg: var(--ui-error-bg);
+  
+  /* ========================================
+   * SPECIAL STATES
+   * ======================================== */
+  
+  /* Review Mode - Purple */
+  --color-review: var(--state-review);
+  --color-review-emphasis: var(--state-review-emphasis);
+  --color-review-muted: var(--state-review-muted);
+  
+  /* Worktree Mode - Orange */
+  --color-worktree: var(--state-worktree);
+  --color-worktree-emphasis: var(--state-worktree-emphasis);
+  
+  /* ========================================
+   * FOCUS & SELECTION
+   * ======================================== */
+  --color-focus: var(--ui-focus);
+  --color-focus-ring: var(--ui-focus-ring);
+  --color-selection: var(--ui-selection);
+  
+  /* ========================================
+   * SHADOWS
+   * ======================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-overlay: 0 0 0 1px #30363d, 0 16px 32px rgba(0, 0, 0, 0.5);
+  
+  /* ========================================
+   * BORDER RADIUS
+   * ======================================== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  
+  /* ========================================
+   * SPACING
+   * ======================================== */
+  --spacing-sidebar: 200px;
+  --spacing-statusbar: 24px;
+  --spacing-header: 48px;
+  
+  /* ========================================
+   * ANIMATIONS
+   * ======================================== */
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-slide-in: slide-in 0.2s ease-out;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-in {
+    from { 
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}
+
+/* ========================================
+ * BASE STYLES & THEMES
+ * ======================================== */
+
+/* Default Dark Theme (GitHub Dark Dimmed) */
+:root {
+  --bg-app: #0d1117;
+  --bg-panel: #161b22;
+  --bg-input: #090c10;
+  --bg-elevated: #1c2128;
+  --bg-overlay: #21262d;
+  
+  --border-base: #30363d;
+  --border-subtle: #21262d;
+  --border-emphasis: #484f58;
+  
+  --text-base: #e6edf3;
+  --text-muted: #8b949e;
+  --text-subtle: #6e7681;
+  --text-disabled: #484f58;
+  
+  --git-added: #2da44e;
+  --git-added-emphasis: #3fb950;
+  --git-added-muted: #23863633;
+  --git-added-subtle: #12261e;
+  
+  --git-removed: #cf222e;
+  --git-removed-emphasis: #f85149;
+  --git-removed-muted: #f8514933;
+  --git-removed-subtle: #2d1b1d;
+  
+  --git-modified: #d29922;
+  --git-modified-emphasis: #e3b341;
+  --git-modified-muted: #d2992233;
+  --git-modified-subtle: #2e2517;
+  
+  --git-link: #58a6ff;
+  --git-link-emphasis: #79c0ff;
+  --git-link-muted: #58a6ff33;
+  --git-link-subtle: #1a2634;
+  
+  --ui-primary: #58a6ff;
+  --ui-primary-hover: #79c0ff;
+  --ui-primary-active: #388bfd;
+  --ui-primary-bg: #1f6feb;
+  
+  --ui-secondary: #21262d;
+  --ui-secondary-hover: #30363d;
+  --ui-secondary-active: #484f58;
+  
+  --ui-success: #2da44e;
+  --ui-success-hover: #3fb950;
+  --ui-success-bg: #238636;
+  
+  --ui-warning: #d29922;
+  --ui-warning-hover: #e3b341;
+  --ui-warning-bg: #9e6a03;
+  
+  --ui-error: #cf222e;
+  --ui-error-hover: #f85149;
+  --ui-error-bg: #a40e26;
+  
+  --state-review: #6f42c1;
+  --state-review-emphasis: #8957e5;
+  --state-review-muted: #6f42c133;
+  
+  --state-worktree: #d29922;
+  --state-worktree-emphasis: #e3b341;
+  
+  --ui-focus: #58a6ff;
+  --ui-focus-ring: #58a6ff66;
+  --ui-selection: #264f78;
+}
+
+/* Light Theme (GitHub Light) */
+[data-theme="light"] {
+  --bg-app: #ffffff;
+  --bg-panel: #f6f8fa;
+  --bg-input: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-overlay: #f6f8fa;
+  
+  --border-base: #d0d7de;
+  --border-subtle: #eff1f3;
+  --border-emphasis: #8c959f;
+  
+  --text-base: #24292f;
+  --text-muted: #57606a;
+  --text-subtle: #6e7781;
+  --text-disabled: #8c959f;
+  
+  --git-added: #1a7f37;
+  --git-added-emphasis: #1a7f37;
+  --git-added-muted: #dafbe1;
+  --git-added-subtle: #dafbe1;
+  
+  --git-removed: #cf222e;
+  --git-removed-emphasis: #cf222e;
+  --git-removed-muted: #ffebe9;
+  --git-removed-subtle: #ffebe9;
+  
+  --git-modified: #9a6700;
+  --git-modified-emphasis: #9a6700;
+  --git-modified-muted: #fff8c5;
+  --git-modified-subtle: #fff8c5;
+  
+  --git-link: #0969da;
+  --git-link-emphasis: #0969da;
+  --git-link-muted: #ddf4ff;
+  --git-link-subtle: #ddf4ff;
+  
+  --ui-primary: #0969da;
+  --ui-primary-hover: #0969da;
+  --ui-primary-active: #0969da;
+  --ui-primary-bg: #ddf4ff;
+  
+  --ui-secondary: #f6f8fa;
+  --ui-secondary-hover: #eaeef2;
+  --ui-secondary-active: #afb8c1;
+  
+  --ui-success: #1a7f37;
+  --ui-success-hover: #116329;
+  --ui-success-bg: #dafbe1;
+  
+  --ui-warning: #9a6700;
+  --ui-warning-hover: #4d2d00;
+  --ui-warning-bg: #fff8c5;
+  
+  --ui-error: #cf222e;
+  --ui-error-hover: #a40e26;
+  --ui-error-bg: #ffebe9;
+  
+  --state-review: #8250df;
+  --state-review-emphasis: #8250df;
+  --state-review-muted: #fbefff;
+  
+  --state-worktree: #9a6700;
+  --state-worktree-emphasis: #9a6700;
+  
+  --ui-focus: #0969da;
+  --ui-focus-ring: #0969da33;
+  --ui-selection: #b6e3ff;
+}
+
+/* Git Original Theme (Brand Colors) */
+[data-theme="git"] {
+  /* Git Brand Colors: #F05032 (Orange/Red), #3E3E3E (Dark Grey), #F5F5F5 (Light Grey) */
+  /* We use a Dark base but with Git Orange accents */
+  
+  --bg-app: #2b2b2b; /* Slightly lighter than pure black, classic terminal feel */
+  --bg-panel: #333333;
+  --bg-input: #1f1f1f;
+  --bg-elevated: #3e3e3e;
+  --bg-overlay: #2b2b2b;
+  
+  --border-base: #444444;
+  --border-subtle: #383838;
+  --border-emphasis: #666666;
+  
+  --text-base: #f0f0f0;
+  --text-muted: #aaaaaa;
+  --text-subtle: #888888;
+  --text-disabled: #555555;
+  
+  /* Git Branding Accent */
+  --ui-primary: #F05032; /* Git Orange */
+  --ui-primary-hover: #ff6e52;
+  --ui-primary-active: #d63d20;
+  --ui-primary-bg: #F0503233; /* 20% opacity */
+  
+  --ui-focus: #F05032;
+  --ui-focus-ring: #F0503266;
+  --ui-selection: #F0503244;
+  
+  /* Standard Semantics (Adjusted for contrast against dark grey) */
+  --git-added: #4cd964;
+  --git-added-emphasis: #4cd964;
+  --git-added-muted: #4cd96433;
+  --git-added-subtle: #1a3320;
+  
+  --git-removed: #ff3b30;
+  --git-removed-emphasis: #ff3b30;
+  --git-removed-muted: #ff3b3033;
+  --git-removed-subtle: #331a1a;
+  
+  --git-modified: #ffcc00;
+  --git-modified-emphasis: #ffcc00;
+  --git-modified-muted: #ffcc0033;
+  --git-modified-subtle: #332b00;
+  
+  --git-link: #5ac8fa;
+  --git-link-emphasis: #5ac8fa;
+  --git-link-muted: #5ac8fa33;
+  --git-link-subtle: #1a2a33;
+  
+  --ui-secondary: #3e3e3e;
+  --ui-secondary-hover: #4d4d4d;
+  --ui-secondary-active: #555555;
+  
+  --ui-success: #4cd964;
+  --ui-success-hover: #5de075;
+  --ui-success-bg: #4cd96433;
+  
+  --ui-warning: #ffcc00;
+  --ui-warning-hover: #ffd633;
+  --ui-warning-bg: #ffcc0033;
+  
+  --ui-error: #ff3b30;
+  --ui-error-hover: #ff5c53;
+  --ui-error-bg: #ff3b3033;
+  
+  --state-review: #af52de;
+  --state-review-emphasis: #af52de;
+  --state-review-muted: #af52de33;
+  
+  --state-worktree: #ff9500;
+  --state-worktree-emphasis: #ff9500;
+}
+
+/* Ocean Theme (Deep Blue/Teal) */
+[data-theme="ocean"] {
+  --bg-app: #0f172a; /* Slate 900 */
+  --bg-panel: #1e293b; /* Slate 800 */
+  --bg-input: #020617; /* Slate 950 */
+  --bg-elevated: #334155; /* Slate 700 */
+  --bg-overlay: #1e293b;
+
+  --border-base: #334155;
+  --border-subtle: #1e293b;
+  --border-emphasis: #475569;
+
+  --text-base: #f8fafc; /* Slate 50 */
+  --text-muted: #94a3b8; /* Slate 400 */
+  --text-subtle: #64748b; /* Slate 500 */
+  --text-disabled: #475569; /* Slate 600 */
+
+  --ui-primary: #06b6d4; /* Cyan 500 */
+  --ui-primary-hover: #22d3ee; /* Cyan 400 */
+  --ui-primary-active: #0891b2; /* Cyan 600 */
+  --ui-primary-bg: #06b6d433;
+
+  --ui-secondary: #1e293b;
+  --ui-secondary-hover: #334155;
+  --ui-secondary-active: #475569;
+
+  --ui-success: #10b981; /* Emerald 500 */
+  --ui-success-hover: #34d399;
+  --ui-success-bg: #10b98133;
+
+  --ui-warning: #f59e0b; /* Amber 500 */
+  --ui-warning-hover: #fbbf24;
+  --ui-warning-bg: #f59e0b33;
+
+  --ui-error: #ef4444; /* Red 500 */
+  --ui-error-hover: #f87171;
+  --ui-error-bg: #ef444433;
+
+  --git-added: #10b981;
+  --git-added-emphasis: #34d399;
+  --git-added-muted: #10b98133;
+  --git-added-subtle: #064e3b;
+
+  --git-removed: #ef4444;
+  --git-removed-emphasis: #f87171;
+  --git-removed-muted: #ef444433;
+  --git-removed-subtle: #450a0a;
+
+  --git-modified: #f59e0b;
+  --git-modified-emphasis: #fbbf24;
+  --git-modified-muted: #f59e0b33;
+  --git-modified-subtle: #451a03;
+
+  --git-link: #06b6d4;
+  --git-link-emphasis: #22d3ee;
+  --git-link-muted: #06b6d433;
+  --git-link-subtle: #083344;
+  
+  --state-review: #8b5cf6; /* Violet 500 */
+  --state-review-emphasis: #a78bfa;
+  --state-review-muted: #8b5cf633;
+  
+  --state-worktree: #f59e0b;
+  --state-worktree-emphasis: #fbbf24;
+
+  --ui-focus: #06b6d4;
+  --ui-focus-ring: #06b6d466;
+  --ui-selection: #06b6d444;
+}
+
+/* Forest Theme (Natural Green) */
+[data-theme="forest"] {
+  --bg-app: #1a2f23; /* Dark Green */
+  --bg-panel: #243c30; 
+  --bg-input: #12221a;
+  --bg-elevated: #2f4b3f;
+  --bg-overlay: #243c30;
+
+  --border-base: #2f4b3f;
+  --border-subtle: #243c30;
+  --border-emphasis: #446353;
+
+  --text-base: #e8f5e9;
+  --text-muted: #a5d6a7;
+  --text-subtle: #81c784;
+  --text-disabled: #446353;
+
+  --ui-primary: #66bb6a; /* Green 400 */
+  --ui-primary-hover: #81c784; /* Green 300 */
+  --ui-primary-active: #4caf50; /* Green 500 */
+  --ui-primary-bg: #66bb6a33;
+
+  --ui-secondary: #243c30;
+  --ui-secondary-hover: #2f4b3f;
+  --ui-secondary-active: #446353;
+
+  --ui-success: #66bb6a;
+  --ui-success-hover: #81c784;
+  --ui-success-bg: #66bb6a33;
+
+  --ui-warning: #ffb74d; /* Orange 300 */
+  --ui-warning-hover: #ffcc80;
+  --ui-warning-bg: #ffb74d33;
+
+  --ui-error: #ef5350; /* Red 400 */
+  --ui-error-hover: #e57373;
+  --ui-error-bg: #ef535033;
+
+  --git-added: #66bb6a;
+  --git-added-emphasis: #81c784;
+  --git-added-muted: #66bb6a33;
+  --git-added-subtle: #1b5e20;
+
+  --git-removed: #ef5350;
+  --git-removed-emphasis: #e57373;
+  --git-removed-muted: #ef535033;
+  --git-removed-subtle: #b71c1c;
+
+  --git-modified: #ffb74d;
+  --git-modified-emphasis: #ffcc80;
+  --git-modified-muted: #ffb74d33;
+  --git-modified-subtle: #e65100;
+
+  --git-link: #4dd0e1; /* Cyan 300 */
+  --git-link-emphasis: #80deea;
+  --git-link-muted: #4dd0e133;
+  --git-link-subtle: #006064;
+
+  --state-review: #ba68c8; /* Purple 300 */
+  --state-review-emphasis: #ce93d8;
+  --state-review-muted: #ba68c833;
+  
+  --state-worktree: #ffb74d;
+  --state-worktree-emphasis: #ffcc80;
+
+  --ui-focus: #66bb6a;
+  --ui-focus-ring: #66bb6a66;
+  --ui-selection: #66bb6a44;
+}
+
+/* Sunset Theme (Warm Gradients/Orange) */
+[data-theme="sunset"] {
+  --bg-app: #2a1b1b; /* Dark reddish brown */
+  --bg-panel: #3d2424;
+  --bg-input: #1f1212;
+  --bg-elevated: #523030;
+  --bg-overlay: #3d2424;
+
+  --border-base: #523030;
+  --border-subtle: #3d2424;
+  --border-emphasis: #6b4040;
+
+  --text-base: #ffebee;
+  --text-muted: #ffccbc;
+  --text-subtle: #ffab91;
+  --text-disabled: #6b4040;
+
+  --ui-primary: #ff7043; /* Deep Orange 400 */
+  --ui-primary-hover: #ff8a65; /* Deep Orange 300 */
+  --ui-primary-active: #f4511e; /* Deep Orange 600 */
+  --ui-primary-bg: #ff704333;
+
+  --ui-secondary: #3d2424;
+  --ui-secondary-hover: #523030;
+  --ui-secondary-active: #6b4040;
+
+  --ui-success: #9ccc65; /* Light Green 400 */
+  --ui-success-hover: #aed581;
+  --ui-success-bg: #9ccc6533;
+
+  --ui-warning: #ffa726; /* Orange 400 */
+  --ui-warning-hover: #ffb74d;
+  --ui-warning-bg: #ffa72633;
+
+  --ui-error: #ef5350; /* Red 400 */
+  --ui-error-hover: #e57373;
+  --ui-error-bg: #ef535033;
+
+  --git-added: #9ccc65;
+  --git-added-emphasis: #aed581;
+  --git-added-muted: #9ccc6533;
+  --git-added-subtle: #33691e;
+
+  --git-removed: #ef5350;
+  --git-removed-emphasis: #e57373;
+  --git-removed-muted: #ef535033;
+  --git-removed-subtle: #b71c1c;
+
+  --git-modified: #ffa726;
+  --git-modified-emphasis: #ffb74d;
+  --git-modified-muted: #ffa72633;
+  --git-modified-subtle: #e65100;
+
+  --git-link: #ff7043;
+  --git-link-emphasis: #ff8a65;
+  --git-link-muted: #ff704333;
+  --git-link-subtle: #bf360c;
+
+  --state-review: #ab47bc; /* Purple 400 */
+  --state-review-emphasis: #ba68c8;
+  --state-review-muted: #ab47bc33;
+
+  --state-worktree: #ffa726;
+  --state-worktree-emphasis: #ffb74d;
+
+  --ui-focus: #ff7043;
+  --ui-focus-ring: #ff704366;
+  --ui-selection: #ff704344;
+}
+
+/* Dracula Theme (Classic Vampire) */
+[data-theme="dracula"] {
+  --bg-app: #282a36;
+  --bg-panel: #282a36; /* Dracula uses same background often, or slightly lighter */
+  --bg-input: #21222c; /* Usually darker in Dracula */
+  --bg-elevated: #44475a;
+  --bg-overlay: #282a36;
+
+  --border-base: #44475a;
+  --border-subtle: #6272a4;
+  --border-emphasis: #bd93f9; /* Moderate purple for emphasis */
+
+  --text-base: #f8f8f2;
+  --text-muted: #6272a4; /* Comment color */
+  --text-subtle: #999999; /* Made up for hierarchy */
+  --text-disabled: #44475a;
+
+  --ui-primary: #bd93f9; /* Purple */
+  --ui-primary-hover: #d6acff;
+  --ui-primary-active: #8d6ec8;
+  --ui-primary-bg: #bd93f933;
+
+  --ui-secondary: #44475a;
+  --ui-secondary-hover: #565a6d;
+  --ui-secondary-active: #6272a4;
+
+  --ui-success: #50fa7b; /* Green */
+  --ui-success-hover: #69ff94;
+  --ui-success-bg: #50fa7b33;
+
+  --ui-warning: #ffb86c; /* Orange */
+  --ui-warning-hover: #ffc98b;
+  --ui-warning-bg: #ffb86c33;
+
+  --ui-error: #ff5555; /* Red */
+  --ui-error-hover: #ff6e6e;
+  --ui-error-bg: #ff555533;
+
+  --git-added: #50fa7b;
+  --git-added-emphasis: #69ff94;
+  --git-added-muted: #50fa7b33;
+  --git-added-subtle: #1a3320; /* Dark green for background */
+
+  --git-removed: #ff5555;
+  --git-removed-emphasis: #ff6e6e;
+  --git-removed-muted: #ff555533;
+  --git-removed-subtle: #331a1a; /* Dark red for background */
+
+  --git-modified: #ffb86c;
+  --git-modified-emphasis: #ffc98b;
+  --git-modified-muted: #ffb86c33;
+  --git-modified-subtle: #332b00;
+
+  --git-link: #8be9fd; /* Cyan */
+  --git-link-emphasis: #a0f0ff;
+  --git-link-muted: #8be9fd33;
+  --git-link-subtle: #1a2a33;
+
+  --state-review: #ff79c6; /* Pink */
+  --state-review-emphasis: #ff92d0;
+  --state-review-muted: #ff79c633;
+  
+  --state-worktree: #f1fa8c; /* Yellow */
+  --state-worktree-emphasis: #ffffa5;
+
+  --ui-focus: #bd93f9; /* Purple */
+  --ui-focus-ring: #bd93f966;
+  --ui-selection: #44475a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-app);
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Prevent body scroll in app */
+}
+
+/* Code/Mono elements */
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-emphasis);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-selection);
+}
+
+/* ========================================
+ * UTILITY CLASSES
+ * ======================================== */
+
+/* Draggable title bar region for Tauri */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
