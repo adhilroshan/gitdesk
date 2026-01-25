@@ -37,7 +37,7 @@ GitDesk aims to revolutionize the development lifecycle by moving security and q
 
 This repository (`gitdesk`) contains the source code for the GitDesk landing page and product documentation.
 
-- **Download**: [Latest Releases](https://github.com/adhilroshan/gitdesk/releases)
+- **Download**: [Latest Release](https://github.com/adhilroshan/gitdesk/releases/latest)
 
 ---
 Built by [Adhil Roshan](https://github.com/adhilroshan)

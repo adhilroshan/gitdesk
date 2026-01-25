@@ -72,7 +72,7 @@ export function Hero() {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
                 >
                     <Link
-                        href="https://github.com/adhilroshan/gitdesk/releases"
+                        href="https://github.com/adhilroshan/gitdesk/releases/latest"
                         className="group relative h-12 px-8 rounded-full bg-white text-black font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                     >
                         <span>Download Beta</span>
