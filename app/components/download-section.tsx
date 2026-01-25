@@ -1,4 +1,4 @@
-import { GlassCard } from "./ui/glass-card";
+
 
 const platforms = [
   {

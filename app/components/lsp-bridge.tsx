@@ -7,7 +7,7 @@ export function LSPBridge() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-base">
-            Language servers analyze <span className="text-gradient">what you'll commit</span>
+            Language servers analyze <span className="text-gradient">what you&apos;ll commit</span>
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto">
             Other Git clients review your working directory. GitDesk creates a shadow workspace
@@ -97,7 +97,7 @@ export function LSPBridge() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <div className="font-medium">unused variable: 'temp'</div>
+                    <div className="font-medium">unused variable: &apos;temp&apos;</div>
                     <div className="text-xs opacity-70">line 12, col 5</div>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export function LSPBridge() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                   <div>
-                    <div className="font-medium">missing export: 'handleAuth'</div>
+                    <div className="font-medium">missing export: &apos;handleAuth&apos;</div>
                     <div className="text-xs opacity-70">line 45, col 0</div>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ import { Github, Star, Shield, Terminal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export function Hero() {
+export function Hero({ version = "v0.1.0" }: { version?: string }) {
     return (
         <section className="relative flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden bg-bg-app border-b border-border-base">
 
@@ -25,7 +25,7 @@ export function Hero() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-lg bg-border-subtle/50 border border-border-highlight backdrop-blur-md">
                         <Terminal className="w-4 h-4 text-primary" />
                         <span className="text-sm font-mono font-medium text-text-muted tracking-wide">
-                            PUBLIC BETA v0.1.0
+                            PUBLIC ALPHA {version}
                         </span>
                     </div>
                 </motion.div>
@@ -61,7 +61,7 @@ export function Hero() {
                         href="https://github.com/adhilroshan/gitdesk/releases/latest"
                         className="group relative h-14 px-8 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold font-mono text-base flex items-center justify-center gap-3 transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                     >
-                        <span>DOWNLOAD BETA</span>
+                        <span>DOWNLOAD ALPHA</span>
                         <div className="bg-white/20 p-1 rounded-sm">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:rotate-90 transition-transform">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>

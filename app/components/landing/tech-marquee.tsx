@@ -18,8 +18,8 @@ export function TechMarquee() {
             </div>
             <div className="flex overflow-hidden relative fade-mask">
                 {/* Gradient Masks */}
-                <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-bg-app to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-bg-app to-transparent z-10" />
+                <div className="absolute left-0 top-0 bottom-0 w-40 bg-linear-to-r from-bg-app to-transparent z-10" />
+                <div className="absolute right-0 top-0 bottom-0 w-40 bg-linear-to-l from-bg-app to-transparent z-10" />
 
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}

@@ -1,0 +1,20 @@
+
+> gitdesk-io@0.1.0 lint
+> eslint
+
+
+D:\Fun\gitdesk-io\app\components\download-section.tsx
+  1:10  warning  'GlassCard' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Fun\gitdesk-io\app\components\lsp-bridge.tsx
+   10:78  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  100:67  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  100:72  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  110:66  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  110:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Fun\gitdesk-io\app\components\ui\code-block.tsx
+  8:35  warning  'language' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 7 problems (5 errors, 2 warnings)
+

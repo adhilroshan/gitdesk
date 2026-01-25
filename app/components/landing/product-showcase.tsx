@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/app/lib/utils";
-import { GitBranch, Shield, Zap } from "lucide-react";
+import { Shield, Zap, Code2 } from "lucide-react";
 
 interface Feature {
     id: string;
@@ -23,10 +23,10 @@ const features: Feature[] = [
         image: "/screenshots/Screenshot (5).png"
     },
     {
-        id: "history",
-        title: "Smart Git Graph",
-        description: "Visualize your repository history with clarity. Our custom-built graph engine renders complex merge strategies and branch structures beautifully, giving you instant context on your project's evolution.",
-        icon: GitBranch,
+        id: "lsp",
+        title: "LSP Integration",
+        description: "Direct integration with Language Servers for precise diagnostics and auto-fix capabilities. Get instant feedback on type errors and potential bugs as you type.",
+        icon: Code2,
         image: "/screenshots/Screenshot (2).png"
     },
     {
@@ -103,7 +103,7 @@ export function ProductShowcase() {
 
                     {/* Visual / Screenshot */}
                     <div className="lg:col-span-7 pb-8 lg:pb-0">
-                        <div className="relative aspect-[16/10] w-full rounded-xl border border-border-highlight bg-bg-card shadow-2xl overflow-hidden glass">
+                        <div className="relative aspect-16/10 w-full rounded-xl border border-border-highlight bg-bg-card shadow-2xl overflow-hidden glass">
                             {/* Inner glow */}
                             <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
 

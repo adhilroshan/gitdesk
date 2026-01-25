@@ -36,7 +36,7 @@ export function CodeBlock({ code, language = "typescript", fileName, highlights 
         </div>
       )}
       <pre className="p-4 text-sm overflow-x-auto">
-        <code className="font-mono">
+        <code className={`font-mono language-${language}`}>
           {lines.map((line, i) => (
             <div key={i} className={`px-2 -mx-2 ${getLineClass(i)}`}>
               <span className="text-text-disabled select-none mr-4 w-6 inline-block text-right">{(i + 1).toString()}</span>
