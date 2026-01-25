@@ -24,7 +24,7 @@ export function CtaSection() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Link
-                            href="/download"
+                            href="https://github.com/adhilroshan/gitdesk/releases"
                             className="h-12 px-8 rounded-md bg-white hover:bg-gray-200 text-black font-semibold text-base flex items-center gap-2 transition-all shadow-sm"
                         >
                             <Terminal className="w-4 h-4" />
