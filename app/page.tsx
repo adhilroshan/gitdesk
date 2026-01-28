@@ -10,11 +10,15 @@ async function getLatestVersion() {
   try {
     const res = await fetch("https://github.com/adhilroshan/gitdesk/releases/latest", {
       redirect: "follow",
-      next: { revalidate: 3600 } // Revalidate every hour
+      next: { revalidate: 60 } // Revalidate every minute
     });
-    // URL will be something like .../releases/tag/v0.1.8
+
+    // URL will be something like .../releases/tag/v0.1.9
     const segments = res.url.split("/");
     const tag = segments[segments.length - 1];
+
+    console.log(`[Version Fetch] Fetched URL: ${res.url}, Tag detected: ${tag}`);
+
     return tag.startsWith("v") ? tag : `v${tag}`;
   } catch (e) {
     console.error("Failed to fetch latest version:", e);
